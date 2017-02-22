@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>You're in the Zone</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 100;
+      font-size: 3em;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="trippy-text"></div>
+  <script type="text/javascript">
+    var text = "I'M LOST";
+    d3.select("#trippy-text").selectAll("span")
+      .data(text.split(''))
+      .enter()
+      .append('span')
+      .text(function (val) { return val; });
+    function update() {
+      var randomColors = d3.range(text.length).map(function (n) { return Math.random() * 360; });
+      var spans = d3.selectAll("span")
+        .data(randomColors)
+        .transition()
+        .delay(150)
+        .style("color", function(d, i) {
+          return "hsl(" + d + ",100%,50%)";
+        });
+    }
+    setInterval(update, 100);
+var flash=0
+function lightning()
+{flash=flash+1;
+if(flash==1){document.bgColor='white'; setTimeout("lightning()",100);}
+if(flash==2){document.bgColor='black'; setTimeout("lightning()",90);}
+if(flash==3){document.bgColor='red'; setTimeout("lightning()",85);}
+if(flash==4){document.bgColor='blue'; setTimeout("lightning()",80);}
+if(flash==5){document.bgColor='purple'; setTimeout("lightning()",75);}
+if(flash==6){document.bgColor='white'; setTimeout("lightning()",70);}
+if(flash==7){document.bgColor='black'; setTimeout("lightning()",65);}
+if(flash==8){document.bgColor='red'; setTimeout("lightning()",60);}
+if(flash==9){document.bgColor='blue'; setTimeout("lightning()",50);}
+if(flash==10){document.bgColor='purple'; setTimeout("lightning()",40);}
+if(flash==11){document.bgColor='black'; setTimeout("lightning()",30);}
+if(flash==12){document.bgColor='white'; setTimeout("lightning()",25);}
+if(flash==13){document.bgColor='red'; setTimeout("lightning()",20);}
+if(flash==14){document.bgColor='blue'; setTimeout("lightning()",10);}
+if(flash==15){document.bgColor='purple'; setTimeout("lightning()",5);}
+if(flash==16){document.bgColor='white'; setTimeout("lightning()",1);}
+if(flash==17){document.bgColor='black'; setTimeout("lightning()",1);}
+if(flash==18){document.bgColor='blue'; setTimeout("lightning()",1);}
+if(flash==19){document.bgColor='purple'; setTimeout("lightning()",1);}
+if(flash==20){flash=0; setTimeout("lightning()",100);}
+}
+setTimeout("lightning()",1);
+// --></SCRIPT></body>
+</html>

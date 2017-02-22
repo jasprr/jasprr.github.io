@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PANIC ATTACK</title>
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+
+<script>
+var flash=0
+function lightning()
+{flash=flash+1;
+if(flash==1){document.bgColor='white'; setTimeout("lightning()",100);}
+if(flash==2){document.bgColor='black'; setTimeout("lightning()",90);}
+if(flash==3){document.bgColor='red'; setTimeout("lightning()",85);}
+if(flash==4){document.bgColor='blue'; setTimeout("lightning()",80);}
+if(flash==5){document.bgColor='purple'; setTimeout("lightning()",75);}
+if(flash==6){document.bgColor='white'; setTimeout("lightning()",70);}
+if(flash==7){document.bgColor='black'; setTimeout("lightning()",65);}
+if(flash==8){document.bgColor='red'; setTimeout("lightning()",60);}
+if(flash==9){document.bgColor='blue'; setTimeout("lightning()",50);}
+if(flash==10){document.bgColor='purple'; setTimeout("lightning()",40);}
+if(flash==11){document.bgColor='black'; setTimeout("lightning()",30);}
+if(flash==12){document.bgColor='white'; setTimeout("lightning()",25);}
+if(flash==13){document.bgColor='red'; setTimeout("lightning()",20);}
+if(flash==14){document.bgColor='blue'; setTimeout("lightning()",10);}
+if(flash==15){document.bgColor='purple'; setTimeout("lightning()",5);}
+if(flash==16){document.bgColor='white'; setTimeout("lightning()",1);}
+if(flash==17){document.bgColor='black'; setTimeout("lightning()",1);}
+if(flash==18){document.bgColor='blue'; setTimeout("lightning()",1);}
+if(flash==19){document.bgColor='purple'; setTimeout("lightning()",1);}
+if(flash==20){flash=0; setTimeout("lightning()",100);}
+}
+setTimeout("lightning()",1);
+</script>
+</body>
+</html>
